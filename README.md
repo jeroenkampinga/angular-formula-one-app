@@ -6,4 +6,4 @@ A Formula one themed Angular playground app.
 
 Run 'grunt' for building and 'grunt serve' for preview.
 
-Make sure compass is installed globally.
+Make sure compass is installed globally. > gem install compass
