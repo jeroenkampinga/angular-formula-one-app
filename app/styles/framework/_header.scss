@@ -4,8 +4,8 @@
 
 		&.navbar-black{
 		background:#000;
-			
-			ul{	
+
+			ul{
 				margin:15px 0;
 
 				li{
@@ -39,6 +39,17 @@
 
 		.navbar-brand{
 			height:auto;
+			width: 120px;
+		}
+	}
+
+	.navbar-toggle {
+
+		.icon-bar {
+			width: 30px;
+			height: 3px;
+			margin-top: 6px;
+			background: #fff;
 		}
 	}
 }
