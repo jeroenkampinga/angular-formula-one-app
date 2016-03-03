@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-white coureur-detail">
+	<div class="container">
+		<div class="row">
+			<a href="#/coureurs" class="btn btn-info ib"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Terug naar overzicht</a>
+			<div class="dropdown ib clearfix" ng-controller = "driverInfoController">
+      			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        			Kies andere coureur
+        			<span class="caret"></span>
+      			</button>
+      			<ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+        			<li class="dropdown-header" ng-repeat = "driver in driverInfo">
+        				<a href="#/coureurs/{{driver.driverId}}">{{ driver.familyName }}</a>
+        			</li>        		
+      			</ul>
+    		</div>
+		</div>
+
+		<div class="row">
+			<div class="coureur" ng-controller = "driverDetailController">
+				<figure class="pasfoto">
+					<img ng-src="images/coureurs/{{ driverDetail.driverId }}.jpg" />
+				</figure>
+				<h3>{{ driverDetail.givenName }} {{ driverDetail.familyName }}</h3>
+				{{ driverDetail.dateOfBirth }}
+			</div>
+		</div>
+	</div>
+</div>

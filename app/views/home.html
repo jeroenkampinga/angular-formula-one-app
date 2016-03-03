@@ -1,0 +1,43 @@
+<div class="jumbotron jumbotron-white">
+	<div class="main" ng-controller = "lastRaceController">
+		<h3>{{ lastRaceInfo.raceName }} / {{ lastRaceInfo.date | date:'dd/MM/yyyy'}}</h3>
+
+		<table>
+			<tr>
+				<th>
+					<a href="" ng-click="order('position')">Punten</a>
+				</th>
+				<th>
+					Naam
+				</th>
+				<th>
+					Team
+				</th>
+				<th>
+					
+				</th>
+			</tr>
+			<tr ng-repeat="item in lastRaceInfo.Results | orderBy:'-Driver.points'">
+				<td class="positie">
+					<span class="team-number">
+						<span class="text">
+							{{ item.points }}
+						</span>
+						<span class="color {{ item.Constructor.constructorId }}"></span>
+					</span>
+				</td>
+				<td class="naam">
+					<a href="#/coureurs/{{item.Driver.driverId}}">
+						{{ item.Driver.familyName }}
+					</a>
+				</td>
+				<td class="team">
+					{{ item.Constructor.name }}
+				</td>
+				<td class="auto">
+					<img ng-src="/images/cars/{{ item.Constructor.constructorId }}.jpg" />
+				</td>
+			</tr>
+   		</table>
+	</div>
+</div>

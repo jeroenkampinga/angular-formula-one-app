@@ -1,0 +1,44 @@
+.header{
+	.navbar{
+		margin:0;
+
+		&.navbar-black{
+		background:#000;
+			
+			ul{	
+				margin:15px 0;
+
+				li{
+					margin:0 20px;
+
+					&.active{
+						border-bottom:2px solid $red;
+					}
+
+					&:hover{
+						border-bottom:2px solid $grey;
+
+						a{
+							background:none;
+						}
+					}
+				}
+
+				a{
+					color:#fff;
+					padding:10px 0;
+					text-transform: uppercase;
+					font-weight: 600;
+				}
+
+				a:focus{
+					background:none!important;
+				}
+			}
+		}
+
+		.navbar-brand{
+			height:auto;
+		}
+	}
+}

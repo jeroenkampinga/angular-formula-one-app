@@ -1,0 +1,86 @@
+//== Coureurs
+//
+//##
+
+// /drivers
+.coureurs{
+	.jumbotron &{
+		text-align: left;
+	}
+}
+
+.coureur{
+	margin:0 0 30px;
+
+	&.coureur-overview{
+		border-right: 2px solid #efefed;
+	}
+
+	&.coureur-overview:hover{
+		text-decoration: none;
+		background:#000;
+		
+		.driverInfo{
+			.achternaam, .raceNummer{
+				color:#fff;
+			}
+		}
+
+		img{
+			transform: scale(1.05);
+
+			&.coureur-detail{
+				transform: none;
+			}
+		}
+	}
+
+	&:nth-child(2n+2){
+		border-color:#fff;
+	}
+
+	.pasfoto{
+		overflow:hidden;
+
+		img{
+			width:100%;
+			@extend .image-trans !optional;
+
+			.coureur-detail &{
+				margin-top:20px;
+			}
+		}
+	}
+
+	.driverInfo{
+		padding:15px 20px;
+
+		.raceNummer{
+			font-size: 32px;
+			font-weight: 300;
+			color:#333;
+
+		}
+
+		.voornaam, .achternaam{
+			text-transform: uppercase;
+			color:#909090;
+			font-size: 18px;
+			line-height: 15px;
+			font-weight: 400;
+		}
+
+		.achternaam{
+			font-size: 26px;
+			line-height: 26px;
+			color:#333;
+			font-weight: 700;
+		}
+	}		
+}
+
+.coureur-detail{
+	.dropdown{
+		float:right;
+	}
+}

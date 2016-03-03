@@ -1,0 +1,65 @@
+<div class="jumbotron jumbotron-white">
+	<div class="main" ng-controller = "resultController">
+
+		<div class="row">
+			<h3>Seizoen: {{ result.season }}<h3>
+			<h3>Races: {{ result.round }}</h3>
+
+			<div class="dropdown ib clearfix" ng-controller = "driverInfoController">
+      			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        			Kies een ander seizoen
+        			<span class="caret"></span>
+      			</button>
+      			<ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+        			<li class="dropdown-header" ng-repeat = "season in prevSeasons">
+        				<a href="#/resultaten/{{season.jaar}}">{{ season.jaar }}</a>
+        			</li>        		
+      			</ul>
+    		</div>
+		</div>
+		
+		<div class="row">
+			<table>
+				<tr>
+					<th>
+						<a href="" ng-click="order('position')">Positie</a>
+					</th>
+					<th>
+						Naam
+					</th>
+					<th>
+						Team
+					</th>
+					<th>
+						
+					</th>
+					<th>
+						Punten
+					</th>
+				</tr>
+				<tr ng-repeat="item in resultSeason">
+					<td class="positie">
+						<span class="team-number">
+							<span class="text">
+								{{ item.positionText }}
+							</span>
+							<span class="color {{ item.Constructors[0].constructorId }}"></span>
+						</span>
+					</td>
+					<td class="naam">
+						{{ item.Driver.familyName }}
+					</td>
+					<td class="team">
+						{{ item.Constructors[0].name }}
+					</td>
+					<td class="auto">
+						<img ng-src="/images/cars/{{ item.Constructors[0].constructorId }}.jpg" on-error-src="images/cars/default.gif" />
+					</td>
+					<td class="punten">
+						{{ item.points }}
+					</td>
+				</tr>
+	   		</table>
+	   	</div>
+	</div>
+</div>

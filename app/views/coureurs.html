@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-white">
+	<div class="container">
+		<div class="row no-gutter">
+			<div class="main" ng-controller = "driverInfoController">
+				<h3>Coureurs</h3>
+				<input class="zoek" placeholder="Zoeken..." ng-model="query">
+				<div class="coureurs">
+					<a href="#/coureurs/{{driver.driverId}}" class="coureur coureur-overview col-md-6" ng-repeat = "driver in driverInfo | filter:query">
+						<figure class="pasfoto">
+							<img ng-src="images/coureurs/{{ driver.driverId }}.jpg" />
+						</figure>
+						<div class="driverInfo">
+							<div class="raceNummer">
+								{{ driver.permanentNumber }}
+							</div>
+							<div class="voornaam">
+								{{ driver.givenName }}
+							</div>
+							<div class="achternaam">
+								{{ driver.familyName }}
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
